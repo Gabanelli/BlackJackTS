@@ -5,3 +5,6 @@ export var Suits;
     Suits[Suits["Copas"] = 2] = "Copas";
     Suits[Suits["Espadas"] = 3] = "Espadas";
 })(Suits || (Suits = {}));
+export const SuitSymbols = [
+    '♣', '♦', '♥', '♠'
+];

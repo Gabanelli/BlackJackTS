@@ -1,9 +1,10 @@
 var _a, _b;
 import Player from "./player.js";
 import { deck } from "./deck.js";
-const you = new Player('Você');
-const machine = new Player('A maquina');
+const you = new Player('Você', 'player');
+const machine = new Player('A maquina', 'machine');
 var isGameOver = false;
+const display = document.getElementById("display");
 (_a = document.getElementById("pick")) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
     pickCard();
 });
@@ -11,6 +12,7 @@ var isGameOver = false;
     stopGame();
 });
 const startGame = () => {
+    machine.setCardsHidden();
     for (let i = 0; i < 2; i++) {
         you.addCard(deck);
         machine.addCard(deck);
@@ -18,7 +20,7 @@ const startGame = () => {
     console.log(you.cardsToString());
     if (you.getPoints() === 21) {
         isGameOver = true;
-        return console.log("Você ganhou com um 21!");
+        return display.value = "21!";
     }
 };
 const pickCard = () => {
@@ -32,13 +34,18 @@ const pickCard = () => {
             }
             else {
                 isGameOver = true;
-                return console.log("Seus pontos excederam 21.");
+                return display.value = "Seus pontos excederam 21.";
             }
+        }
+        if (playerPoints === 21) {
+            isGameOver = true;
+            return display.value = "21!";
         }
     }
 };
 const stopGame = () => {
     if (!isGameOver) {
+        machine.showCards();
         console.log(machine.cardsToString());
         const playerPoints = you.getPoints();
         let machinePoints = machine.getPoints();
@@ -52,13 +59,13 @@ const stopGame = () => {
                 }
                 else {
                     isGameOver = true;
-                    return console.log("O valor da maquina excedeu 21.");
+                    return display.value = "Você venceu";
                 }
             }
         }
         if (machinePoints <= 21) {
             isGameOver = true;
-            return console.log("A maquina venceu!");
+            return display.value = "A maquina venceu!";
         }
     }
 };

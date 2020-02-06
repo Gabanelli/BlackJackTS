@@ -4,3 +4,7 @@ export enum Suits {
     'Copas',
     'Espadas',
 }
+
+export const SuitSymbols = [
+    '♣', '♦', '♥', '♠'
+]

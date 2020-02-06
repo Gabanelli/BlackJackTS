@@ -1,9 +1,11 @@
 import Player from "./player.js"
 import { deck } from "./deck.js"
 
-const you = new Player('Você')
-const machine = new Player('A maquina')
+const you = new Player('Você', 'player')
+const machine = new Player('A maquina', 'machine')
 var isGameOver = false
+
+const display = <HTMLInputElement>document.getElementById("display")
 
 document.getElementById("pick")?.addEventListener('click', () => {
   pickCard()
@@ -14,6 +16,7 @@ document.getElementById("stop")?.addEventListener('click', () => {
 })
 
 const startGame = () => {
+  machine.setCardsHidden()
   for(let i = 0; i < 2; i++) {
     you.addCard(deck)
     machine.addCard(deck)
@@ -21,7 +24,7 @@ const startGame = () => {
   console.log(you.cardsToString())
   if(you.getPoints() === 21) {
     isGameOver = true
-    return console.log("Você ganhou com um 21!")
+    return display.value = "21!"
   }
 }
 
@@ -35,14 +38,19 @@ const pickCard = () => {
         playerPoints = you.getPoints()
       } else {
         isGameOver = true
-        return console.log("Seus pontos excederam 21.")
+        return display.value = "Seus pontos excederam 21."
       }
+    }
+    if(playerPoints === 21) {
+      isGameOver = true
+      return display.value = "21!"
     }
   }
 }
 
 const stopGame = () => {
   if(!isGameOver) {
+    machine.showCards()
     console.log(machine.cardsToString())
     const playerPoints = you.getPoints()
     let machinePoints = machine.getPoints()
@@ -55,13 +63,13 @@ const stopGame = () => {
           machinePoints = machine.getPoints()
         } else {
           isGameOver = true
-          return console.log("O valor da maquina excedeu 21.")
+          return display.value = "Você venceu"
         }
       }
     }
     if(machinePoints <= 21) {
       isGameOver = true
-      return console.log("A maquina venceu!")
+      return display.value = "A maquina venceu!"
     }
   }
 }

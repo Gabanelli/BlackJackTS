@@ -1,4 +1,4 @@
-import { Suits } from "./suits.js"
+import { Suits, SuitSymbols } from "./suits.js"
 
 export default class Card {
     private name : string
@@ -29,5 +29,29 @@ export default class Card {
             return true;
         }
         return false;
+    }
+
+    public isRed() : boolean {
+        return this.suit === 1 || this.suit === 2
+    }
+
+    public getHTMLCard() : string {
+        return `
+            <div>
+                <div class="value-container">
+                    <div class="suit">${SuitSymbols[this.suit]}</div>
+                    <div class="name"><b>${this.getName()}</b></div>
+                </div>
+            </div>
+            <div class="principal-symbol">
+                ${SuitSymbols[this.suit]}
+            </div>
+            <div class="card-bottom">
+                <div class="value-container">
+                    <div class="suit">${SuitSymbols[this.suit]}</div>
+                    <div class="name"><b>${this.getName()}</b></div>
+                </div>
+            </div>
+        `
     }
 }
