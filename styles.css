@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 20px solid saddlebrown;
+    border-radius: 5px;
 }
 
 .side{
@@ -56,4 +58,18 @@
 .principal-symbol{
     align-self: center;
     font-size: 30px;
+}
+
+.action{
+    margin-bottom: 10px;
+    width: 200px;
+    border: 0px;
+    background-color: white;
+    color: darkgreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action :hover{
+    background-color: whitesmoke;
 }
