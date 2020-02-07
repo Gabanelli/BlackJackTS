@@ -10,5 +10,5 @@ Clone the repository and start the local server
 ```
 $ git clone https://github.com/Gabanelli/BlackJackTS.git
 $ cd BlackJackTS
-$ live-server (or any other launcher)
+$ live-server (or any other server launcher)
 ```
