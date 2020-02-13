@@ -1,0 +1,33 @@
+{
+  "name": "blackjackts",
+  "version": "1.0.0",
+  "description": "A BlackJack game developed with HTML5, CSS3 and TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp start",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabanelli/BlackJackTS.git"
+  },
+  "author": "Guilherme Lima Gabanelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabanelli/BlackJackTS/issues"
+  },
+  "homepage": "https://github.com/Gabanelli/BlackJackTS#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "typescript": "^3.7.5"
+  }
+}

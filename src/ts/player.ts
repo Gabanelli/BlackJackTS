@@ -1,6 +1,4 @@
-import Card from "./card.js"
-
-export default class Player {
+class Player {
     private name : string
     private cards : Array<Card>
     private deskSide : string

@@ -1,14 +1,12 @@
-import { Suits, SuitSymbols } from "./suits.js"
-
-export default class Card {
+class Card {
     private name : string
     private value : number
-    private suit : Suits
+    private suitIndex : number
 
-    constructor(name : string, value : number, suit : Suits) {
+    constructor(name : string, value : number, suit : number) {
         this.name = name
         this.value = value
-        this.suit = suit
+        this.suitIndex = suit
     }
 
     public getValue() : number {
@@ -32,23 +30,23 @@ export default class Card {
     }
 
     public isRed() : boolean {
-        return this.suit === 1 || this.suit === 2
+        return this.suitIndex === 1 || this.suitIndex === 2
     }
 
     public getHTMLCard() : string {
         return `
             <div>
                 <div class="value-container">
-                    <div class="suit">${SuitSymbols[this.suit]}</div>
+                    <div class="suit">${Suits.suitSymbols[this.suitIndex]}</div>
                     <div class="name"><b>${this.getName()}</b></div>
                 </div>
             </div>
             <div class="principal-symbol">
-                ${SuitSymbols[this.suit]}
+                ${Suits.suitSymbols[this.suitIndex]}
             </div>
             <div class="card-bottom">
                 <div class="value-container">
-                    <div class="suit">${SuitSymbols[this.suit]}</div>
+                    <div class="suit">${Suits.suitSymbols[this.suitIndex]}</div>
                     <div class="name"><b>${this.getName()}</b></div>
                 </div>
             </div>
