@@ -24,6 +24,12 @@ function css() {
     .pipe(connect.reload())
 }
 
+function staticFiles() {
+  return src('src/static/**')
+    .pipe(dest(`${target}/static`))
+    .pipe(connect.reload())
+}
+
 function jsBuild() {
   return tsProject.src()
     .pipe(tsProject()).js
@@ -56,11 +62,11 @@ function serve(cb) {
 }
 
 const build = series(clean, 
-  parallel(index, css, jsBuild),
+  parallel(index, css, jsBuild, staticFiles),
 )
 
 const start = series(clean, 
-  parallel(index, css, jsDev),
+  parallel(index, css, jsDev, staticFiles),
   parallel(serve, watchers),
 )
 
