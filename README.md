@@ -3,12 +3,12 @@
 A BlackJack game developed with HTML5, CSS3 and TypeScript.
 
 ## Requirements
-* Local server launcher, I'm using [live-server](https://www.npmjs.com/package/live-server)
+* Node.JS (You can install on https://nodejs.org)
 
 ## Instructions
-Clone the repository and start the local server
+Clone the repository and start
 ```
 $ git clone https://github.com/Gabanelli/BlackJackTS.git
 $ cd BlackJackTS
-$ live-server (or any other server launcher)
+$ npm start
 ```
