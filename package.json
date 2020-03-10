@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp start",
-    "build": "gulp build"
+    "start": "npx gulp start",
+    "build": "npx gulp build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gabanelli/BlackJackTS.git"
   },
-  "author": "Guilherme Lima Gabanelli",
+  "author": "Guilherme Lima Gabanelli (gabanelli.guilherme@gmail.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Gabanelli/BlackJackTS/issues"
