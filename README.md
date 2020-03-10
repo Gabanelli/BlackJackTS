@@ -10,5 +10,6 @@ Clone the repository and start
 ```
 $ git clone https://github.com/Gabanelli/BlackJackTS.git
 $ cd BlackJackTS
+$ npm install
 $ npm start
 ```
