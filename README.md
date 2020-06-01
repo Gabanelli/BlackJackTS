@@ -13,3 +13,5 @@ $ cd BlackJackTS
 $ npm install
 $ npm start
 ```
+## Live Preview
+https://guigabanelli-blackjack.netlify.app/
